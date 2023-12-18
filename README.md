@@ -1,1 +1,1 @@
-This is test project with hero admin panel!
+Learning to combine react and redux. I use libraries classnames and uuid for dynamically generating classes and id
