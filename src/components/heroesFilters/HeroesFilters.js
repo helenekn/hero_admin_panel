@@ -18,7 +18,7 @@ import Spinner from "../spinner/Spinner";
 
 const HeroesFilters = () => {
   const { filters, filtersLoadingStatus, activeFilter } = useSelector(
-    (state) => state
+    (state) => state.filters
   );
   const dispatch = useDispatch();
   const { request } = useHttp();
@@ -44,7 +44,7 @@ const HeroesFilters = () => {
       return <h5 className="text-center mt-5">No filters found</h5>;
     }
 
-    // Данные в json-файле я расширил классами и текстом
+    // Данные в json-файле я расширила классами и текстом
     return arr.map(({ name, className, label }) => {
       // Используем библиотеку classnames и формируем классы динамически
       const btnClass = classNames("btn", className, {

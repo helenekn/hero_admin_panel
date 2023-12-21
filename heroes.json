@@ -23,6 +23,12 @@
       "name": "Olena",
       "description": "I can create app",
       "element": "water"
+    },
+    {
+      "id": "16068c1d-04c2-4d48-8463-83a9702f5740",
+      "name": "Nika",
+      "description": "I can bark",
+      "element": "fire"
     }
   ],
   "filters": [
