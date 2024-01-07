@@ -29,6 +29,18 @@
       "name": "Nika",
       "description": "I can bark",
       "element": "fire"
+    },
+    {
+      "id": "92819bcc-065b-48aa-8a62-333566bf7907",
+      "name": "Pavlo",
+      "description": "I can ride a scooter",
+      "element": "wind"
+    },
+    {
+      "id": "4edf09b0-8f39-4207-a508-778fac173b3c",
+      "name": "Mariia",
+      "description": "I can laugh",
+      "element": "water"
     }
   ],
   "filters": [
