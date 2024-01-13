@@ -11,15 +11,17 @@ import { useHttp } from "../../hooks/http.hook";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { v4 as uuidv4 } from "uuid";
-import { heroCreated } from "../heroesList/heroesSlice";
 import { selectAll } from "../heroesFilters/filtersSlice";
 import store from "../../store";
+import { useCreateHeroMutation } from "../../api/apiSlice";
 
 const HeroesAddForm = () => {
   //Состояние для контроля формы
   const [heroName, setHeroName] = useState("");
   const [heroDescr, setHeroDescr] = useState("");
   const [heroElement, setHeroElement] = useState("");
+
+  const [creatHero, { isLoading }] = useCreateHeroMutation();
 
   const { filtersLoadingStatus } = useSelector((state) => state.filters);
   const filters = selectAll(store.getState());
@@ -37,10 +39,12 @@ const HeroesAddForm = () => {
     // Send data to the server in JSON format
     // ONLY if the request is successful - send the character to the store
 
-    request("http://localhost:3001/heroes", "POST", JSON.stringify(newHero))
-      .then((res) => console.log("Sending successful"))
-      .then(dispatch(heroCreated(newHero)))
-      .catch((err) => console.log(err));
+    creatHero(newHero).unwrap();
+
+    // request("http://localhost:3001/heroes", "POST", JSON.stringify(newHero))
+    //   .then((res) => console.log("Sending successful"))
+    //   .then(dispatch(heroCreated(newHero)))
+    //   .catch((err) => console.log(err));
 
     // Clear the form after submitting
 
